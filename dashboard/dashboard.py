@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -7,7 +8,9 @@ st.set_page_config(page_title="E-Commerce Analysis Dashboard", layout="wide")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("main_data.csv")
+    path = os.path.dirname(__file__)
+    file_path = os.path.join(path, 'main_data.csv')
+    df = pd.read_csv(file_path)
     df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
     return df
 
