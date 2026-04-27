@@ -8,8 +8,11 @@ st.set_page_config(page_title="E-Commerce Analysis Dashboard", layout="wide")
 
 @st.cache_data
 def load_data():
-    path = os.path.dirname(__file__)
-    file_path = os.path.join(path, 'main_data.csv')
+    # Mengambil lokasi folder script ini berada
+    basepath = os.path.dirname(__file__)
+    # Menggabungkan folder tersebut dengan nama file data
+    file_path = os.path.join(basepath, 'main_data.csv')
+    
     df = pd.read_csv(file_path)
     df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
     return df
