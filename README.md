@@ -1,34 +1,39 @@
-# Proyek Analisis Data E-Commerce 🛍️
+# 📊 Olist E-Commerce Data Analysis & Dashboard ✨
 
-## Deskripsi
-Proyek ini bertujuan untuk menganalisis data transaksi e-commerce guna menemukan pola perilaku pelanggan, jam sibuk pembelian, dan performa penjualan di wilayah tertentu. Hasil analisis ini digunakan untuk memberikan rekomendasi strategis bagi tim operasional dan pemasaran.
+Proyek ini merupakan analisis mendalam terhadap dataset publik E-Commerce Olist untuk mengeksplorasi performa penjualan, kategori produk unggulan, serta pola perilaku transaksi pelanggan. Hasil analisis ini kemudian divisualisasikan melalui dashboard interaktif menggunakan Streamlit.
 
-## Struktur Data
-Dataset yang digunakan mencakup informasi mengenai:
-- Pelanggan (Customers)
-- Pesanan (Orders)
-- Item Pesanan (Order Items)
-- Pembayaran (Payments)
-- Produk (Products)
-- Lokasi (Geolocation)
-- Penjual (Sellers)
+## 📁 Struktur Proyek
+- `/dashboard`: Berisi file utama dashboard (`dashboard.py`) dan dataset yang telah dibersihkan (`all_data.csv`).
+- `/data`: Direktori untuk menyimpan dataset mentah (CSV).
+- `notebook.ipynb`: File Jupyter Notebook yang berisi proses Data Wrangling, EDA, hingga Visualisasi.
+- `README.md`: Dokumentasi proyek.
+- `requirements.txt`: Daftar library Python yang dibutuhkan.
 
-## Tahapan Analisis
-1. **Data Wrangling**: Menggabungkan dataset, menangani missing values pada kolom logistik, dan memperbaiki tipe data datetime.
-2. **Exploratory Data Analysis (EDA)**: Mengeksplorasi tren penjualan bulanan, distribusi geografis pelanggan di Sao Paulo, dan pengaruh cicilan terhadap nilai transaksi.
-3. **Visualization**: Membuat grafik interaktif untuk memudahkan pemahaman tren jam sibuk dan metode pembayaran favorit[cite: 2].
-
-## Cara Menjalankan Dashboard Streamlit
-Dashboard ini dapat dijalankan di lingkungan lokal Anda dengan langkah-langkah berikut:
-
-### 1. Persiapan Environment
-Pastikan Anda memiliki Python (versi 3.11 atau 3.12) terinstal di sistem Anda.
+## 🛠️ Setup Environment - Anaconda
+Jika Anda menggunakan Anaconda, ikuti langkah berikut:
 ```bash
-# Buat folder proyek
-mkdir proyek_analisis_data
-cd proyek_analisis_data
+conda create --name olist-ds python=3.9
+conda activate olist-ds
+pip install -r requirements.txt
+```
 
-# Buat virtual environment (opsional tapi disarankan)
+## 🛠️ Setup Environment - Shell/Terminal (venv)
+Jika Anda menggunakan Python virtual environment (venv), ikuti langkah berikut:
+```bash
+# Membuat virtual environment
 python -m venv venv
-source venv/bin/activate  # Untuk Mac/Linux
-.\venv\Scripts\activate   # Untuk Windows
+
+# Mengaktifkan virtual environment (Windows)
+venv\Scripts\activate
+# Mengaktifkan virtual environment (macOS/Linux)
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## 🚀 Menjalankan Dashboard
+Setelah environment aktif dan semua library telah terinstall, jalankan perintah berikut untuk membuka dashboard:
+```bash
+streamlit run dashboard/dashboard.py
+```
